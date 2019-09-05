@@ -1,28 +1,29 @@
 let express = require('express')
-let pageConeorller = require('./contorller/pageConeorller.js')
+let pageContorller = require('./contorller/pageContorller')
+let userContorller = require('./contorller/userContorller')
 let router = express.Router()
 //前台的页面
-router.get('/',pageConeorller.getIdexPage)
-.get('/detail',pageConeorller.getDetilPage)
-.get('/list',pageConeorller.getListPage)
+router.get('/',pageContorller.getIdexPage)
+.get('/detail',pageContorller.getDetilPage)
+.get('/list',pageContorller.getListPage)
 
 
 //登录页面
-.get('/login',pageConeorller.getLogin)
-
+.get('/login',pageContorller.getLogin)
+.post('/login',userContorller.login)
 
 
 //后台页面
 
-.get('/admin',pageConeorller.getAdminIndexPage)
-.get('/admin/navMenus',pageConeorller.getNavPage)
-.get('/admin/categories',pageConeorller.getCategoriesPage)
-.get('/admin/comments',pageConeorller.getCommentsPage)
-.get('/admin/posts',pageConeorller.getPostsPage)
-.get('/admin/postAdd',pageConeorller.getPostAddPage)
-.get('/admin/users',pageConeorller.getUsersPage)
-.get('/admin/slides',pageConeorller.getSlidesPage)
-.get('/admin/settings',pageConeorller.getSettingsPage)
-.get('/admin/profile',pageConeorller.getProfilePage)
-.get('/admin/passwordReset',pageConeorller.getPasswordResetPage)
+.get('/admin',pageContorller.getAdminIndexPage)
+.get('/admin/navMenus',pageContorller.getNavPage)
+.get('/admin/categories',pageContorller.getCategoriesPage)
+.get('/admin/comments',pageContorller.getCommentsPage)
+.get('/admin/posts',pageContorller.getPostsPage)
+.get('/admin/postAdd',pageContorller.getPostAddPage)
+.get('/admin/users',pageContorller.getUsersPage)
+.get('/admin/slides',pageContorller.getSlidesPage)
+.get('/admin/settings',pageContorller.getSettingsPage)
+.get('/admin/profile',pageContorller.getProfilePage)
+.get('/admin/passwordReset',pageContorller.getPasswordResetPage)
 module.exports = router
