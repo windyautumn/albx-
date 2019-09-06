@@ -26,4 +26,5 @@ router.get('/',pageContorller.getIdexPage)
 .get('/admin/settings',pageContorller.getSettingsPage)
 .get('/admin/profile',pageContorller.getProfilePage)
 .get('/admin/passwordReset',pageContorller.getPasswordResetPage)
+.get('/loginOut',userContorller.loginOut)
 module.exports = router
