@@ -14,10 +14,17 @@ module.exports={
             }else{
                 if(data){
                     if(data.password === obj.password){
-                        res.json({
+                        // res.json({
+                        //     code:200,
+                        //     des:'登录成功'
+                        // })
+                        res.writeHeader(200,{
+                            'Set-Cookie':'isLogin=true'
+                        })
+                        res.end(JSON.stringify({
                             code:200,
                             des:'登录成功'
-                        })
+                        }))
                     }else{
                         res.json({
                             code:400,

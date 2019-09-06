@@ -16,7 +16,10 @@ $(function () {
             data:$('form').serialize(),
             datatype:'json',
             success:function(res){
-                if(res.code === 200){
+                // console.log(typeof res)
+                let code = JSON.parse(res).code
+                if(code == 200){
+                    // console.log(123)
                     location.href='/admin'
                 }
             }
