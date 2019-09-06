@@ -45,11 +45,11 @@ module.exports = {
             }
         })
     },
-    loginOut(req,res){
+    loginOut(req, res) {
         req.session = ''
         res.json({
-            code:200,
-            des:'退出登录'
+            code: 200,
+            des: '退出登录'
         })
     }
 }

@@ -1,52 +1,56 @@
 let express = require('express')
-
-module.exports={
+let userModol= require('../modols/userModol')
+module.exports = {
     //前台的页面
-    getIdexPage(req,res){
+    getIdexPage(req, res) {
         res.render('index')
     },
-    getDetilPage(req,res){
+    getDetilPage(req, res) {
         res.render('detail')
     },
-    getListPage(req,res){
+    getListPage(req, res) {
         res.render('list')
     },
 
     //后台页面
-    getAdminIndexPage(req,res){
+    getAdminIndexPage(req, res) {
         res.render('admin/index')
     },
-    getNavPage(req,res){
+    getNavPage(req, res) {
         res.render('admin/nav-menus')
     },
-    getCategoriesPage(req,res){
+    getCategoriesPage(req, res) {
         res.render('admin/categories')
     },
-    getCommentsPage(req,res){
+    getCommentsPage(req, res) {
         res.render('admin/comments')
     },
-    getPostsPage(req,res){
-        res.render('admin/posts')
+    getPostsPage(req, res) {
+        userModol.getAllPosts((err, data) => {
+            if (err) res.end('404')
+            res.render('admin/posts',{data})
+        })
+        
     },
-    getPostAddPage(req,res){
+    getPostAddPage(req, res) {
         res.render('admin/post-add')
     },
-    getUsersPage(req,res){
+    getUsersPage(req, res) {
         res.render('admin/users')
     },
-    getSlidesPage(req,res){
+    getSlidesPage(req, res) {
         res.render('admin/slides')
     },
-    getSettingsPage(req,res){
+    getSettingsPage(req, res) {
         res.render('admin/settings')
     },
-    getProfilePage(req,res){
+    getProfilePage(req, res) {
         res.render('admin/profile')
     },
-    getLogin(req,res){
+    getLogin(req, res) {
         res.render('admin/login')
     },
-    getPasswordResetPage(req,res){
+    getPasswordResetPage(req, res) {
         res.render('admin/password-reset')
     }
 }

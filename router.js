@@ -26,5 +26,7 @@ router.get('/',pageContorller.getIdexPage)
 .get('/admin/settings',pageContorller.getSettingsPage)
 .get('/admin/profile',pageContorller.getProfilePage)
 .get('/admin/passwordReset',pageContorller.getPasswordResetPage)
+//退出登录
 .get('/loginOut',userContorller.loginOut)
+//获取所有文章
 module.exports = router
