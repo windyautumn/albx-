@@ -28,6 +28,7 @@ module.exports = {
     getPostsPage(req, res) {
         userModol.getAllPosts((err, data) => {
             if (err) res.end('404')
+            console.log(data)
             res.render('admin/posts',{data})
         })
         

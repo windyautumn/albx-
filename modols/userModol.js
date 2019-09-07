@@ -3,7 +3,8 @@ let conn = mysql.createConnection({
     host:'127.0.0.1',
     user:'root',
     password:'root',
-    database:'baixiu'
+    database:'baixiu',
+    dateStrings:true
 })
 module.exports={
     login(email,callback){
