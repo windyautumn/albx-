@@ -1,6 +1,7 @@
 let express = require('express')
 let pageContorller = require('./contorller/pageContorller')
 let userContorller = require('./contorller/userContorller')
+let postsContorller = require('./contorller/postsContorller')
 let router = express.Router()
 //前台的页面
 router.get('/',pageContorller.getIdexPage)
@@ -29,4 +30,5 @@ router.get('/',pageContorller.getIdexPage)
 //退出登录
 .get('/loginOut',userContorller.loginOut)
 //获取所有文章
+.get('/getAllPosts',postsContorller.getAllPosts)
 module.exports = router
