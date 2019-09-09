@@ -56,5 +56,12 @@ module.exports = {
                 callback(null, { data, numb: data1[0].total })
             })
         })
+    },
+    addPage(obj,callback){
+        let sql = `insert into posts set ?`
+        conn.query(sql,[obj],err=>{
+            if(err) callback(false)
+            callback(true)
+        })
     }
 }
