@@ -12,8 +12,12 @@ $(function(){
             data:$('form').serialize(),
             datatype:'json',
             success:function(res){
+                $('.alert-danger > span').text(res.des)
+                $('.alert-danger').fadeIn(200).delay(2000).fadeOut(200)
                 if(res.code == 200){
+                   setTimeout(() => {
                     location.href = '/admin/posts'
+                   }, 2400);
                 }
             }
         })
