@@ -11,6 +11,8 @@
         <strong>错误！</strong>发生XXX错误
       </div> -->
       <form class="row">
+        <!-- 图片隐藏域 -->
+        <input type="hidden" name="feature">
         <div class="col-md-9">
           <div class="form-group">
             <label for="title">标题</label>
@@ -31,7 +33,7 @@
             <label for="feature">特色图像</label>
             <!-- show when image chose -->
             <img class="help-block thumbnail" style="display: none">
-            <input id="feature" class="form-control" name="feature" type="file">
+            <input id="feature" class="form-control" type="file" accept="image/*">
           </div>
           <div class="form-group">
             <label for="category">所属分类</label>
@@ -52,7 +54,7 @@
             </select>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary" type="submit">保存</button>
+            <input class="btn btn-primary btnAdd" type="button" value="保存">
           </div>
         </div>
       </form>
@@ -62,3 +64,5 @@
   <%- include('./layout/aside.ejs'); %>
 
   <%- include('./layout/footer.ejs'); %>
+<script src="/assets/js/postAdd.js"></script>
+<script src="/assets/vendors/ckeditor/ckeditor.js"></script>

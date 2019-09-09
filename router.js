@@ -3,6 +3,7 @@ let pageContorller = require('./contorller/pageContorller')
 let userContorller = require('./contorller/userContorller')
 let postsContorller = require('./contorller/postsContorller')
 let cateContorller = require('./contorller/cateContorller')
+let uploadContorller = require('./contorller/uploadContorller')
 let router = express.Router()
 //前台的页面
 router.get('/',pageContorller.getIdexPage)
@@ -34,4 +35,6 @@ router.get('/',pageContorller.getIdexPage)
 .get('/getAllPosts',postsContorller.getAllPosts)
 //获取所有分类选项
 .get('/getAllCate',cateContorller.getAllCate)
+//文件上传
+.post('/uploadFile',uploadContorller.uploadFile)
 module.exports = router
