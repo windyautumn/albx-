@@ -63,5 +63,25 @@ module.exports = {
             if(err) callback(false)
             callback(true)
         })
+    },
+    getPostById(id,callback){
+        let sql = 'select * from posts where id ='+id
+        conn.query(sql,(err,data)=>{
+            if(err) callback(err)
+            callback(null,data[0])
+
+        })
+    },
+    editPage(obj,callback){
+        let sql = `update posts set ? where id = ?`
+        conn.query(sql,[obj,obj.id],err=>{
+            if(err) callback(false)
+            callback(true)
+        })
     }
+
+
+
+
+
 }

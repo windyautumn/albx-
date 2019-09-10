@@ -33,8 +33,12 @@ router.get('/',pageContorller.getIdexPage)
 .get('/loginOut',userContorller.loginOut)
 //获取所有文章
 .get('/getAllPosts',postsContorller.getAllPosts)
+//根据ID获取文章
+.get('/getPostById',postsContorller.getPostById)
 //上传新的文章
 .post('/addPage',postsContorller.addPage)
+//编辑文章
+.post('/editPage',postsContorller.editPage)
 //获取所有分类选项
 .get('/getAllCate',cateContorller.getAllCate)
 //文件上传

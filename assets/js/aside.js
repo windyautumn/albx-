@@ -4,7 +4,8 @@ $(function () {
     let index = str.indexOf('?')
     let routername = ''
     if (index != -1) {
-        routername = str.substring(str.lastIndexOf('/' + 1, index))
+        routername = str.substring(str.lastIndexOf('/')+1,index)
+        console.log(routername)
     } else {
         routername = str.substring(str.lastIndexOf('/') + 1)
     }
